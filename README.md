@@ -4,7 +4,7 @@ Sistema embebido **cliente–servidor** sobre dos microcontroladores STM32 que a
  
 Proyecto desarrollado para la asignatura de **Ingeniería de Sistemas Embebidos**, con foco en sistemas de tiempo real, comunicación entre dispositivos y desarrollo de servicios web sobre hardware con recursos limitados.
  
-## 💡 Aspectos técnicos destacados
+##  Aspectos técnicos destacados
  
 - Diseño de una **arquitectura distribuida cliente-servidor** entre dos microcontroladores, con protocolo de comunicación propio sobre UART.
 - Programación concurrente con **RTOS (CMSIS-RTOS2 / Keil RTX5)**: hilos dedicados a lectura de sensores, comunicación y gestión del servidor web.
@@ -22,7 +22,7 @@ El sistema está pensado para automatizar y supervisar la alimentación de una m
 - Acciona un **motor/servo (PWM)** para dispensar comida.
 - Cuenta con un **modo de bajo consumo** cuando el sistema está inactivo.
 - Envía todos estos datos al servidor, que los muestra en una **página web** actualizada periódicamente (vía AJAX) y guarda un **log de eventos** (hasta 15 entradas) en memoria no volátil (EEPROM), con la fecha, hora, evento y origen de cada uno.
-## 🏗️ Arquitectura
+##  Arquitectura
  
 ```
 ┌─────────────────────┐        UART / COM        ┌─────────────────────┐         HTTP / Ethernet
@@ -41,7 +41,7 @@ El sistema está pensado para automatizar y supervisar la alimentación de una m
  
 Ambas placas ejecutan **CMSIS-RTOS2 (Keil RTX5)** y se desarrollan sobre **Keil MDK-ARM**. El servidor usa además el **Keil MDK Network Middleware** (pila IPv4/IPv6) para implementar el servidor HTTP.
  
-## 🌐 Interfaz web
+## Interfaz web
  
 La web del servidor (carpeta `Servidor/Web`) incluye, entre otras, estas páginas:
  
@@ -61,7 +61,7 @@ La web del servidor (carpeta `Servidor/Web`) incluye, entre otras, estas página
 - **Actuadores:** Motor/servo controlado por PWM
 - **Web:** HTML, JavaScript, CGI/CGX (generación dinámica de contenido embebido)
 - **Almacenamiento:** EEPROM para configuración y log de eventos
-## 📁 Estructura del repositorio
+##  Estructura del repositorio
  
 ```
 ├── Cliente/          # Firmware de la placa cliente (sensores + actuador)
@@ -81,7 +81,7 @@ La web del servidor (carpeta `Servidor/Web`) incluye, entre otras, estas página
     └── Web/                  # Páginas web (HTML/CGI/CGX/JS)
 ```
  
-## 🚀 Cómo compilar y ejecutar
+##  Cómo compilar y ejecutar
  
 1. Abrir `Cliente/P6E3.uvprojx` y `Servidor/HTTP_Server.uvprojx` en **Keil µVision (MDK-ARM)**.
 2. Compilar y flashear cada proyecto en su placa correspondiente (Cliente y Servidor).
@@ -90,7 +90,7 @@ La web del servidor (carpeta `Servidor/Web`) incluye, entre otras, estas página
 5. Abrir en el navegador `http://<IP_de_la_placa>/` para acceder al panel del comedero (`comedero.cgi`).
 > Usuario por defecto: `admin` — Contraseña por defecto: *(ninguna)*
  
-## 🎓 Contexto y aprendizajes
+##  Contexto y aprendizajes
  
 Proyecto académico (asignatura de Ingeniería de Sistemas Embebidos, curso 2026) desarrollado en equipo. Permitió trabajar de forma práctica con:
  
